@@ -14,6 +14,7 @@
 #
 
 #Cleaner solution
+
 rug_pattern = input("Provide me with a pattern for your rug.\n")
 rug_length = int(input("How long should I make your rug?\n"))
 pattern_length = len(rug_pattern)
