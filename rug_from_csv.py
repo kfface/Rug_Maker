@@ -1,9 +1,6 @@
 import sys
 import csv
 
-
-
-
 def makeRug(Pattern, Length):
     rug_pattern = Pattern
     rug_length = int(Length)
@@ -14,9 +11,9 @@ def makeRug(Pattern, Length):
         print(long_enough_pattern[i : i + pattern_length])
         i += 1
 
-#if len(sys.argv) != 2:
-#    print("usage: python rug_from_csv.py file.csv")
-#    exit
+if len(sys.argv) != 2:
+    print("usage: python rug_from_csv.py file.csv")
+    exit
 rugs = []
 with open(sys.argv[1], 'r', newline='\n') as file:
     rugDict = csv.DictReader(file)
