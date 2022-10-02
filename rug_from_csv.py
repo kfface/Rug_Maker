@@ -1,12 +1,11 @@
 import sys
 import csv
 import rugmaker
-
 if len(sys.argv) != 2:
     print("usage: python rug_from_csv.py file.csv")
     exit
 rugs = []
-with open('rug_requests.csv', 'r', newline='\n') as file:
+with open(sys.argv[1], 'r', newline='\n') as file:
     rugDict = csv.DictReader(file)
     for rug in rugDict:
         rug["Length"] = int(rug["Length"])
@@ -18,6 +17,7 @@ for rug in rugs:
     while count < rug['Quantity']:
         rugmaker.makeRug(rug['Pattern'], rug['Length'])
         count += 1
+
 print("Now let's combine these rugs")
 def rugCombine(rug1, rug2):
     rugmaker.makeRug(rug1['Pattern'], rug2['Length'])
