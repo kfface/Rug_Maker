@@ -17,3 +17,9 @@ for rug in rugs:
     while count < rug['Quantity']:
         rugmaker.makeRug(rug['Pattern'], rug['Length'])
         count += 1
+
+print("Now let's combine these rugs with our own premade rug")
+def rugCombine(rug1, rug2):
+    rugmaker.makeRug('asdfasdfasdf', rug2['Length'])
+    rugmaker.makeRug(rug2['Pattern'], 20)
+rugCombine(rugs[1],rugs[2])
