@@ -9,6 +9,11 @@ with open('rug_requests.csv', 'r', newline='\n') as file:
     rugDict = csv.DictReader(file)
     for rug in rugDict:
         rug["Length"] = int(rug["Length"])
+        rug["Quantity"] = int(rug["Quantity"])
         rugs.append(rug)
+        
 for rug in rugs:
-    rugmaker.makeRug(rug['Pattern'], rug['Length'])
+    count = 0
+    while count < rug['Quantity']:
+        rugmaker.makeRug(rug['Pattern'], rug['Length'])
+        count += 1
